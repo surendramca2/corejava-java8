@@ -13,15 +13,15 @@ public class StringCompare {
         String s4 = new String("surendra");
 
         System.out.println(s1==s2);
-        System.out.println(s1.compareTo(s2));
+        System.out.println(s1.equals(s2));
         System.out.println(s1.contains(s2));
 
         System.out.println(s1==s3);
-        System.out.println(s1.compareTo(s3));
+        System.out.println(s1.equals(s3));
         System.out.println(s1.contains(s3));
 
         System.out.println(s4==s3);
-        System.out.println(s4.compareTo(s3));
+        System.out.println(s4.equals(s3));
         System.out.println(s4.contains(s3));
 
         System.out.println(changeCase("America"));

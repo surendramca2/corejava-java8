@@ -2,7 +2,7 @@ package com.surendra.practice.java.Threading;
 
 public class SequenceThread implements Runnable {
 
-    private int Max_no = 20;
+    private int Max_no = 10;
     private static int number = 1;
 
     private int remainder;
