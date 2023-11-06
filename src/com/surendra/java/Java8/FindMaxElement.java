@@ -10,5 +10,7 @@ public class FindMaxElement {
         int max = no.stream().max(Integer::compare).get();
         System.out.println("max value:"+max);
 
+       int min = no.stream().min(Integer::compare).get();
+        System.out.println("min no ->"+ min);
     }
 }

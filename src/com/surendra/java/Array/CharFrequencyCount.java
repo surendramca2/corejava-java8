@@ -20,7 +20,7 @@ public class CharFrequencyCount {
         String key ="";
         int count=1;
         for (int i = 0; i < ch.length; i++) {
-             key = ch[i]+"";
+             key = String.valueOf(ch[i]);
 
              if(map.containsKey(key) && map.get(key)>1){
                  return key;

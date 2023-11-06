@@ -2,11 +2,11 @@ package com.surendra.java.practice;
 
 import java.util.*;
 
-public class TestMain {
+public class TestMain{
 
     public static void main(String[] args) {
-        int[] source1 = {1,2,3,4};
-        List<Integer> source = new ArrayList<>(Arrays.asList(1,2,3,4));
+        int[] source1 = {1, 2, 3, 4};
+        List<Integer> source = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
         int[] check = {1};
         int[] check1 = {6, 1};
         System.out.println(Arrays.asList(check));
@@ -26,17 +26,6 @@ public class TestMain {
         map.put("pankaj", 700);
         map.put("abir", 900);
 
-        Comparator comparator = new Comparator() {
-            @Override
-            public int compare(Object o1, Object o2) {
-
-                if(o1.equals(o2)){
-                    return 0;
-                }
-
-                return 0;
-            }
-        };
     }
 
 }

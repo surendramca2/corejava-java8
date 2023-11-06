@@ -4,7 +4,7 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
-public class ConcurrentHasmapEx {
+public class ConcurrentHashMapEx {
 
     public static void main(String[] args) {
         Map<String, Integer> map = new ConcurrentHashMap();

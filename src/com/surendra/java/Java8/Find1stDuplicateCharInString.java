@@ -10,9 +10,10 @@ public class Find1stDuplicateCharInString {
 
     public static void main(String[] args) {
 
-        String input = "Jump over to escape";
+        String input = "Jump j over to escape";
 
         getFirstDuplicateChar(input);
+        getFirstDuplicateCh(input);
     }
 
     /**
@@ -31,15 +32,16 @@ public class Find1stDuplicateCharInString {
     }
 
     /**
-     *
+     * Return only 1st duplicate char rather than map.
      * @param s
      */
     private static void getFirstDuplicateCh(String s){
 
-        Set<Integer> set = new HashSet<>();
-        int result =0;
+        Set<Character> set = new HashSet<>();
+       char cc = s.toLowerCase().chars().mapToObj(c->(char)c).filter(c->!Character.isWhitespace(c)).
+                filter(c->!set.add(c)).findFirst().get();
 
-       // System.out.println(map);
+        System.out.println("1st duplicate char "+ cc);
     }
 
 }

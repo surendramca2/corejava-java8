@@ -82,6 +82,35 @@ public class NegativePositiveNoArrangement {
         }
 
     }
+
+    // * Input: -12, 11, -13, -5, 6, -7, 5, -3, -6
+    // * Output: -12 -13 -5 -7 -3 -6 11 6 5
+    public static void arrangeNos(int a[]){
+      int l = a.length;
+      int left = 0;
+      int right = l-1;
+      int tmp =0;
+      if(left==right){
+          return ;
+      }
+      if(a[left]<a[right]){
+          right++;
+      }else{
+          swap(a, left, right);
+          left++;
+          right++;
+      }
+
+
+    }
+
+    private static void swap(int[] a, int left, int right) {
+        int tmp;
+        tmp = a[left];
+        a[left] = a[right];
+        a[right] = tmp;
+    }
+
     private void printArray(int arr[]){
 
         for (int i = 0; i < arr.length; i++) {

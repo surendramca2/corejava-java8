@@ -22,6 +22,7 @@ public class SortMapByKeyAndValuesJava8 {
         sortMapByKey(map);
         sortMapByValue(map);
         sortedMapByValueReverse(map);
+        sortedMapByValueDuplicateMethod(map);
     }
 
 
@@ -45,5 +46,11 @@ public class SortMapByKeyAndValuesJava8 {
         Map<String,Integer> sortedMap =  map.entrySet().stream().sorted(Map.Entry.<String,Integer>comparingByValue().reversed()).collect(Collectors.toMap(
                 Map.Entry::getKey,Map.Entry::getValue, (e1,e2)->e2, LinkedHashMap::new));
         System.out.println("sorted reverse order by value ->"+ sortedMap);
+    }
+
+    private static void sortedMapByValueDuplicateMethod(Map<String,Integer> map){
+        Map<String,Integer> sortedMap = map.entrySet().stream().sorted(Map.Entry.comparingByValue()).collect(Collectors.toMap(Map.Entry::getKey,Map.Entry::getValue
+        ,(e1,e2)->e2, LinkedHashMap::new));
+        System.out.println("sorted map duplicate method -"+ sortedMap);
     }
 }

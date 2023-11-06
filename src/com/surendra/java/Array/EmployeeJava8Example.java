@@ -45,7 +45,7 @@ public class EmployeeJava8Example {
     private static void printEmp(List<EmployeeClass> employeeClassList){
 
         List<EmployeeClass> list = employeeClassList.stream().filter(emp->emp.getSalary()>5000).collect(Collectors.toList());
-
+        System.out.println(list);
 
     }
 
@@ -58,7 +58,7 @@ public class EmployeeJava8Example {
 
     List<String> list =     employeeClassList.stream().filter(s->s.getSalary()>5000).map(s->s.getName()).collect(Collectors.toList());
         System.out.print(list);
-    return list;
+        return list;
     }
 
     /**
@@ -78,6 +78,9 @@ public class EmployeeJava8Example {
             System.out.println(emp.getName()+ " "+ emp.getSalary());
          // Get the sorted map based on the salary
         Map<Double, List<EmployeeClass>> map = employeeClassList.stream().collect(Collectors.groupingBy(s->s.getSalary(), TreeMap::new,Collectors.toList()));
+
+        System.out.println("map of min salary list "+map);
+
     }
 
     /**
@@ -98,7 +101,7 @@ public class EmployeeJava8Example {
      *  Sort the list based on salary.
      */
     private static void printSortListOnSalary(List<EmployeeClass> employeeClasses){
-       List<Double>  sortedSalary =  employeeClasses.stream().map(s->s.getSalary()).sorted().collect(Collectors.toList());
+       List<Double>  sortedSalary =  employeeClasses.stream().map(s->s.getSalary()).sorted(Double::compare).collect(Collectors.toList());
         System.out.println("sorted salary " + sortedSalary);
     }
     /**
@@ -108,5 +111,5 @@ public class EmployeeJava8Example {
     private  static void printMobileNo(List<EmployeeClass> employeeClassList){
 
         employeeClassList.stream().flatMap(employeeClass -> employeeClass.getPhoneNo().stream()).forEach(System.out::println);
-    }
+       }
 }

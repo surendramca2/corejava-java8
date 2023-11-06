@@ -12,5 +12,6 @@ public class find2NdHightest {
        int thirdHighest = no.stream().sorted().skip(no.size()-3).findFirst().get();
         System.out.println("second highest--"+secondHighest);
         System.out.println("third highest "+ thirdHighest);
+        no.stream().sorted().skip(no.size()-2).findFirst().get();
     }
 }
